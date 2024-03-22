@@ -3,12 +3,13 @@ import UniformTypeIdentifiers
 
 struct MainView: View {
 
+    @State private var isShowingDetailView = false
     @State private var isPresentGitWebView = false
     @State private var isPresentLinkedInView = false
     @State private var toast: Toast? = nil
 
     var body: some View {
-        VStack {
+        NavigationStack {
             Image(Assets.logo)
                 .padding(.bottom)
 
@@ -20,7 +21,6 @@ struct MainView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .font(.callout)
-
             List {
                 ForEach(getArchItems()) { item in
                     architectureItemView(
@@ -29,10 +29,15 @@ struct MainView: View {
                 }
                 .listRowSeparator(.hidden)
             }
+            .navigationDestination(
+                 isPresented: $isShowingDetailView
+            ) {
+                DetailView()
+            }
             .listStyle(.plain)
 
             Spacer()
-            
+
             footer
         }
         .toastView(toast: $toast)
@@ -70,11 +75,11 @@ struct MainView: View {
             }
         }
         .onTapGesture {
-            toast = Toast(
-                style: .info,
-                message: Strings.toastTitle
-            )
-            excuteCopy(item.branchName)
+            if item.isCurrentBranch {
+                isShowingDetailView = true
+            } else {
+                excuteCopy(item.branchName)
+            }
         }
     }
 
@@ -137,6 +142,11 @@ private extension MainView {
     }
 
     func excuteCopy(_ branchName: String) {
+        toast = Toast(
+            style: .info,
+            message: Strings.toastTitle
+        )
+
         let command = Strings
             .checkoutText(branchName)
 

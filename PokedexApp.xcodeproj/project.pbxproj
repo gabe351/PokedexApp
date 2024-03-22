@@ -28,6 +28,7 @@
 		04880E0F2BADC82A007B0E7D /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04880E0E2BADC82A007B0E7D /* ToastView.swift */; };
 		04880E112BADC852007B0E7D /* ToastModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04880E102BADC852007B0E7D /* ToastModifier.swift */; };
 		04880E142BADC89A007B0E7D /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04880E132BADC89A007B0E7D /* ViewExtension.swift */; };
+		04880E172BADDB2A007B0E7D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04880E162BADDB2A007B0E7D /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		04880E0E2BADC82A007B0E7D /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		04880E102BADC852007B0E7D /* ToastModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastModifier.swift; sourceTree = "<group>"; };
 		04880E132BADC89A007B0E7D /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		04880E162BADDB2A007B0E7D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		04880DCA2BAD79E4007B0E7D /* PokedexApp */ = {
 			isa = PBXGroup;
 			children = (
+				04880E152BADDB24007B0E7D /* Application */,
 				04880E092BADC7CD007B0E7D /* ToastComponent */,
 				04880E002BAD7FEB007B0E7D /* Common */,
 				04880DF52BAD7A08007B0E7D /* Model */,
@@ -199,6 +202,14 @@
 				04880E132BADC89A007B0E7D /* ViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		04880E152BADDB24007B0E7D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				04880E162BADDB2A007B0E7D /* DetailView.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +344,7 @@
 			files = (
 				04880DF92BAD7A25007B0E7D /* PokemonResponse.swift in Sources */,
 				04880E0B2BADC7E9007B0E7D /* Toast.swift in Sources */,
+				04880E172BADDB2A007B0E7D /* DetailView.swift in Sources */,
 				04880E042BAD8610007B0E7D /* AssetName.swift in Sources */,
 				04880DF72BAD7A14007B0E7D /* PokemonListResponse.swift in Sources */,
 				04880DFD2BAD7A48007B0E7D /* PokemonSprite.swift in Sources */,
