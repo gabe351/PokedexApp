@@ -2,23 +2,15 @@ import Foundation
 
 struct ArchitectureItem: Identifiable {
     let id: String
-    let title: String
-    let branchName: String
-    let isCurrentBranch: Bool
-    var iconName: String {
-        isCurrentBranch ?
-        "chevron.right" :
-        "doc.on.doc.fill"
+    let type: ArchitectureType
+    var title: String {
+        type.rawValue
     }
 
     init(
-        title: String,
-        branchName: String,
-        isCurrentBranch: Bool
+        type: ArchitectureType
     ) {
         self.id = UUID().uuidString
-        self.title = title
-        self.branchName = branchName
-        self.isCurrentBranch = isCurrentBranch
+        self.type = type
     }
 }

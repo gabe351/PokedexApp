@@ -3,13 +3,31 @@ import UniformTypeIdentifiers
 
 struct DetailView: View {
 
+    private let module: ArchitectureType
+
+    init(module: ArchitectureType) {
+        self.module = module
+    }
+
     var body: some View {
         VStack {
-            Text("DETAIL")
+
+            switch module {
+            case .mvvm:
+                MVVM.HomeView()
+            case .mvp:
+                MVP.HomeView()
+            case .viper:
+                Viper.HomeView()
+            case .tca:
+                TCA.HomeView()
+            }
         }
     }
 }
 
 #Preview {
-    DetailView()
+    DetailView(
+        module: .mvvm
+    )
 }
