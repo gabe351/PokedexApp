@@ -17,8 +17,6 @@ struct DetailView: View {
                 MVVM.HomeView()
             case .mvp:
                 MVP.HomeView()
-            case .viper:
-                Viper.HomeView()
             case .tca:
                 TCA.HomeView()
             }

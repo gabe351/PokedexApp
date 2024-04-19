@@ -122,9 +122,6 @@ private extension MainView {
                 type: .mvp
             ),
             ArchitectureItem(
-                type: .viper
-            ),
-            ArchitectureItem(
                 type: .tca
             )
         ]

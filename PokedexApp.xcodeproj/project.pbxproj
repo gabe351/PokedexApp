@@ -39,9 +39,6 @@
 		04B30D2E2BC009240037408E /* TCAHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D2D2BC009240037408E /* TCAHomeView.swift */; };
 		04B30D302BC009440037408E /* TCAPokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D2F2BC009440037408E /* TCAPokemonListView.swift */; };
 		04B30D322BC009530037408E /* TCASavedPokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D312BC009530037408E /* TCASavedPokemonView.swift */; };
-		04B30D342BC009870037408E /* ViperHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D332BC009870037408E /* ViperHomeView.swift */; };
-		04B30D362BC009970037408E /* ViperPokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D352BC009970037408E /* ViperPokemonListView.swift */; };
-		04B30D382BC009DA0037408E /* ViperSavedPokemonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D372BC009DA0037408E /* ViperSavedPokemonView.swift */; };
 		04B30D3B2BC00CBE0037408E /* PokemonListApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B30D3A2BC00CBE0037408E /* PokemonListApiService.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,9 +95,6 @@
 		04B30D2D2BC009240037408E /* TCAHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAHomeView.swift; sourceTree = "<group>"; };
 		04B30D2F2BC009440037408E /* TCAPokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAPokemonListView.swift; sourceTree = "<group>"; };
 		04B30D312BC009530037408E /* TCASavedPokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCASavedPokemonView.swift; sourceTree = "<group>"; };
-		04B30D332BC009870037408E /* ViperHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperHomeView.swift; sourceTree = "<group>"; };
-		04B30D352BC009970037408E /* ViperPokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperPokemonListView.swift; sourceTree = "<group>"; };
-		04B30D372BC009DA0037408E /* ViperSavedPokemonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperSavedPokemonView.swift; sourceTree = "<group>"; };
 		04B30D3A2BC00CBE0037408E /* PokemonListApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListApiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,7 +146,6 @@
 		0481A16C2BC004D00064658F /* ArchitectureModules */ = {
 			isa = PBXGroup;
 			children = (
-				0481A16E2BC004F70064658F /* Viper */,
 				0481A16D2BC004EC0064658F /* TCA */,
 				0481A16B2BC003750064658F /* MVP */,
 				0481A1642BBFEAB50064658F /* MVVM */,
@@ -168,16 +161,6 @@
 				04B30D312BC009530037408E /* TCASavedPokemonView.swift */,
 			);
 			path = TCA;
-			sourceTree = "<group>";
-		};
-		0481A16E2BC004F70064658F /* Viper */ = {
-			isa = PBXGroup;
-			children = (
-				04B30D332BC009870037408E /* ViperHomeView.swift */,
-				04B30D352BC009970037408E /* ViperPokemonListView.swift */,
-				04B30D372BC009DA0037408E /* ViperSavedPokemonView.swift */,
-			);
-			path = Viper;
 			sourceTree = "<group>";
 		};
 		04880DBF2BAD79E4007B0E7D = {
@@ -203,11 +186,10 @@
 		04880DCA2BAD79E4007B0E7D /* PokedexApp */ = {
 			isa = PBXGroup;
 			children = (
-				04B30D392BC00C7D0037408E /* Services */,
-				0481A16C2BC004D00064658F /* ArchitectureModules */,
 				04880E152BADDB24007B0E7D /* Application */,
-				04880E002BAD7FEB007B0E7D /* Common */,
 				04880DF52BAD7A08007B0E7D /* Model */,
+				04B30D392BC00C7D0037408E /* Services */,
+				04880E002BAD7FEB007B0E7D /* Common */,
 				04880DCF2BAD79E5007B0E7D /* Assets.xcassets */,
 				04880DD12BAD79E5007B0E7D /* Preview Content */,
 			);
@@ -287,6 +269,7 @@
 		04880E152BADDB24007B0E7D /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0481A16C2BC004D00064658F /* ArchitectureModules */,
 				04880DCB2BAD79E4007B0E7D /* PokedexAppApp.swift */,
 				04880DCD2BAD79E4007B0E7D /* MainView.swift */,
 				04880E162BADDB2A007B0E7D /* DetailView.swift */,
@@ -450,12 +433,9 @@
 				0481A1632BBFE8E60064658F /* Strings.swift in Sources */,
 				04880E0F2BADC82A007B0E7D /* ToastView.swift in Sources */,
 				04B30D2A2BC008CE0037408E /* MVPPokemonListView.swift in Sources */,
-				04B30D382BC009DA0037408E /* ViperSavedPokemonView.swift in Sources */,
 				04B30D2C2BC008E60037408E /* MVPSavedPokemonView.swift in Sources */,
 				0481A16A2BBFF0840064658F /* MVVMSavedPokemonView.swift in Sources */,
 				04880E0D2BADC804007B0E7D /* ToastStyle.swift in Sources */,
-				04B30D362BC009970037408E /* ViperPokemonListView.swift in Sources */,
-				04B30D342BC009870037408E /* ViperHomeView.swift in Sources */,
 				04880DCC2BAD79E4007B0E7D /* PokedexAppApp.swift in Sources */,
 				04880E082BADBC67007B0E7D /* ArchitectureItem.swift in Sources */,
 				04B30D282BC008B50037408E /* MVPHomeView.swift in Sources */,
