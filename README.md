@@ -22,5 +22,6 @@ What you need to run this project:
 
 ### Main screen
 <p>
-<img src="https://github.com/gabe351/PokedexApp/blob/main/Media/photo_2024-04-05%2009.37.51.png" width="350">
+<img width="383" alt="image" src="https://github.com/gabe351/PokedexApp/assets/12145021/8cd6eb54-6fdc-4dcb-be46-65e4cc06029f">
 </p>
+
