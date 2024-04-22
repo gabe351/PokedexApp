@@ -15,7 +15,6 @@ What you need to run this project:
 
 - IN PROGRESS: Implementing MVVM Arch
 - TODO: Implement MVP
-- TODO: Implement Viper
 - TODO: Implement TCA
 
 ## Gallery
