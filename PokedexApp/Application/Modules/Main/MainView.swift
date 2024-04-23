@@ -11,11 +11,11 @@ struct MainView: View {
             Image(.pokemonLogo)
                 .padding(.bottom)
 
-            Text(Strings.subtitle)
+            Text(Strings.subtitle.text)
                 .font(.headline)
                 .multilineTextAlignment(.center)
 
-            Text(Strings.description)
+            Text(Strings.description.text)
                 .padding()
                 .multilineTextAlignment(.center)
                 .font(.callout)
@@ -105,7 +105,7 @@ private extension MainView {
                     }
                 }
 
-                Text(Strings.author)
+                Text(Strings.author.text)
             }
         }
     }
