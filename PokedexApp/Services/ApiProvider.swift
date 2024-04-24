@@ -36,23 +36,6 @@ final class ApiProvider {
 }
 
 extension ApiProvider {
-    enum Api {
-
-        case baseUrl
-        case customURL(value: String)
-
-        var path: URL? {
-
-            switch self {
-
-            case .baseUrl:
-                return URL(string: "https://pokeapi.co/api/v2/pokemon")
-            case .customURL(let value):
-                return URL(string: value)
-            }
-        }
-    }
-
     enum NetworkError: LocalizedError {
 
         case httpError(code: Int)

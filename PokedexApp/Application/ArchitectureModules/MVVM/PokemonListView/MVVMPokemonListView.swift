@@ -15,13 +15,12 @@ extension MVVM {
 
         var body: some View {
             VStack {
-                AsyncContentView(source: viewModel) { pokemonList in
-                    ContentView(pokemonList: pokemonList, toast: $toast)
+                AsyncContentView(source: viewModel) { pokedex in
+                    ContentView(pokemonList: pokedex.pokemonList, toast: $toast) { id in
+                        viewModel.fetchNextPageIfNeeded(id: id)
+                    }
                 }
             }
-            .onAppear(perform: {
-                viewModel.fetchList()
-            })
         }
     }
 }
@@ -31,13 +30,16 @@ extension MVVM.PokemonListView {
 
         @Binding var toast: Toast?
         private let pokemonList: [PokemonData]
+        private let loadMore: (Int) -> Void
 
         init(
             pokemonList: [PokemonData],
-            toast: Binding<Toast?>
+            toast: Binding<Toast?>,
+            loadMore: @escaping (Int) -> Void
         ) {
             self.pokemonList = pokemonList
             self._toast = toast
+            self.loadMore = loadMore
         }
 
         var body: some View {
@@ -73,6 +75,14 @@ extension MVVM.PokemonListView {
                         .onTapGesture {
                             handleTap(pokemon.isFavorite ?? false)
                         }
+                }
+                .overlay {
+                    NavigationLink(
+                        destination: Text(pokemon.name)
+                    ) {}.opacity(0)
+                }
+                .onAppear {
+                    loadMore(pokemon.id)
                 }
                 .listRowSeparator(.hidden)
 

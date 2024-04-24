@@ -2,22 +2,20 @@ import Foundation
 
 protocol RemoteDataSourceProtocol: AnyObject {
     /// Fetch pokemon list from pokeapi
-    func fetchPokemonList() async throws -> [PokemonData]
+    /// - Parameters:
+    ///     - Api: Api enum value to handle request
+    func fetchPokemonList(api: Api) async throws -> PokedexDto
 }
 
 final class RemoteDataSource: RemoteDataSourceProtocol {
-    func fetchPokemonList() async throws -> [PokemonData] {
-        var result = [PokemonData]()
+    func fetchPokemonList(api: Api) async throws -> PokedexDto {
+        var pokemonList = [PokemonData]()
         let baseResponse: PokemonListBaseResponse = try await ApiProvider
-            .shared.request(.baseUrl)
+            .shared.request(api)
         let baseList = baseResponse.results
 
-        guard let baseList else {
-            return result
-        }
-
         try await withThrowingTaskGroup(of: PokemonData.self) { group in
-            baseList.forEach { pokemonResponse in
+            baseList?.forEach { pokemonResponse in
                 group.addTask {
                     let url = pokemonResponse.url
                     return try await ApiProvider.shared
@@ -26,10 +24,13 @@ final class RemoteDataSource: RemoteDataSourceProtocol {
             }
 
             for try await pokemonData in group {
-                result.append(pokemonData)
+                pokemonList.append(pokemonData)
             }
         }
 
-        return result
+        return PokedexDto(
+            data: baseResponse,
+            pokemonList: pokemonList
+        )
     }
 }
