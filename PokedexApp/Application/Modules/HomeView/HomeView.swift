@@ -1,15 +1,14 @@
 import SwiftUI
 
-struct MVVM {
-    struct HomeView: View {
+struct HomeView: View {
 
-        @State private var toast: Toast? = nil
-        
-        @State private var selectedTab: Tabs = .list
-        let listViewModel = PokemonListViewModel()
-        let savedListView = SavedPokemonView()
+    @State private var toast: Toast? = nil
+    @State private var selectedTab: Tabs = .list
+    @StateObject var listViewModel = PokemonListViewModel()
+    let savedListView = SavedPokemonView()
 
-        var body: some View {
+    var body: some View {
+        NavigationStack {
             TabView(selection: $selectedTab) {
                 PokemonListView(
                     viewModel: listViewModel,
@@ -33,16 +32,24 @@ struct MVVM {
             }
             .toastView(toast: $toast)
             .navigationTitle(selectedTab.rawValue)
-            .navigationBarTitleDisplayMode(.automatic)
-        }
-
-        private enum Tabs: String {
-            case list = "Pokemon List"
-            case saved = "Saved pokemons"
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
+                            .imageScale(.large)
+                            .tint(.red)
+                    }
+                }
+            }
         }
     }
 
-    #Preview {
-        HomeView()
+    private enum Tabs: String {
+        case list = "Pokemon List"
+        case saved = "Saved pokemons"
     }
+}
+
+#Preview {
+    HomeView()
 }

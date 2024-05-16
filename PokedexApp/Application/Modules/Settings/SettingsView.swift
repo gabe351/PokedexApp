@@ -1,7 +1,7 @@
 import SwiftUI
 import UniformTypeIdentifiers
 
-struct MainView: View {
+struct SettingsView: View {
 
     @State private var isShowingDetailView = false
     @State private var toast: Toast? = nil
@@ -19,19 +19,12 @@ struct MainView: View {
                 .padding()
                 .multilineTextAlignment(.center)
                 .font(.callout)
-            List(getArchItems()) { item in
-                ListItemView(item: item)
-                    .listRowBackground(Color.clear)
-                    .overlay {
-                        NavigationLink(
-                            destination: DetailView(
-                                module: item.type
-                            )
-                        ) {}.opacity(0)
-                    }
-                .listRowSeparator(.hidden)
-            }
-            .listStyle(.plain)
+
+            Text("Add settings options like theme or username")
+                .padding()
+                .multilineTextAlignment(.center)
+                .fontWeight(.bold)
+
             Spacer()
 
             FooterView()
@@ -41,39 +34,7 @@ struct MainView: View {
     }
 }
 
-private extension MainView {
-
-    struct ListItemView: View {
-
-        private let item: ArchitectureItem
-
-        init(
-            item: ArchitectureItem
-        ) {
-            self.item = item
-        }
-
-        var body: some View {
-            HStack {
-                Text(item.title)
-                    .bold()
-                    .foregroundStyle(.black)
-                    .padding()
-                Spacer()
-                Image(systemName: "chevron.right")
-                    .renderingMode(.template)
-                    .foregroundStyle(.black)
-                    .padding(.horizontal)
-            }.background {
-                RoundedRectangle(
-                    cornerRadius: Constants.cornerRadius
-                )
-                .background(.clear)
-                .foregroundColor(.yellow)
-            }
-        }
-    }
-
+private extension SettingsView {
     struct FooterView: View {
 
         @State private var isPresentGitWebView = false
@@ -111,21 +72,7 @@ private extension MainView {
     }
 }
 
-private extension MainView {
-
-    func getArchItems() -> [ArchitectureItem] {
-        [
-            ArchitectureItem(
-                type: .mvvm
-            ),
-            ArchitectureItem(
-                type: .mvp
-            ),
-            ArchitectureItem(
-                type: .tca
-            )
-        ]
-    }
+private extension SettingsView {
 
     enum Constants {
         static let cornerRadius: CGFloat = 12.0
@@ -133,5 +80,5 @@ private extension MainView {
 }
 
 #Preview {
-    MainView()
+    SettingsView()
 }

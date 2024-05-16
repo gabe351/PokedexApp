@@ -19,7 +19,7 @@ enum Strings {
         case .subtitle:
             return "Pokedex app to list and capture pokemons"
         case .description:
-            return "In this project you will be able to see the same app implemented in different architectural patterns:"
+            return "In this project you will be able to see the pokemon list and save locally the ones that you see:"
         case .author:
             return "Gabriel Rosa"
         case .alreadySaved:

@@ -1,6 +1,6 @@
 # Pokedex App
 
-This is a sample app consuming the [pokemon API](https://pokeapi.co/) with several architecture 
+This is a sample app consuming the [pokemon API](https://pokeapi.co/) using swiftUI 
 
 ![Swift Version](https://img.shields.io/badge/swift-5.10-orange.svg?style=flat-square)
 
@@ -13,9 +13,9 @@ What you need to run this project:
 
 ## Project in progress:
 
-- IN PROGRESS: Implementing MVVM Arch
-- TODO: Implement MVP
-- TODO: Implement TCA
+- Done: Pokemon infinty scroll Grid
+- In progress: Settings screen
+- TODO: pokemon detail screen 
 
 ## Gallery
 
