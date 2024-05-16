@@ -16,11 +16,14 @@ What you need to run this project:
 - Done: Pokemon infinty scroll Grid
 - In progress: Settings screen
 - TODO: pokemon detail screen 
+- TODO: Saved pokemons list
 
 ## Gallery
 
 ### Main screen
 <p>
-<img width="383" alt="image" src="https://github.com/gabe351/PokedexApp/assets/12145021/8cd6eb54-6fdc-4dcb-be46-65e4cc06029f">
+<img width="400" alt="image" src="https://github.com/gabe351/PokedexApp/assets/12145021/7632a132-f6d8-44cf-8f5b-c1cc0a382f33">
+<img width="400" alt="image" src="https://github.com/gabe351/PokedexApp/assets/12145021/2f4e9bc1-cc79-412e-853c-61ad83fb8072">
 </p>
+
 
