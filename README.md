@@ -20,7 +20,6 @@ What you need to run this project:
 
 ## Gallery
 
-### Main screen
 <p>
 <img width="400" alt="image" src="https://github.com/gabe351/PokedexApp/assets/12145021/7632a132-f6d8-44cf-8f5b-c1cc0a382f33">
 <img width="400" alt="image" src="https://github.com/gabe351/PokedexApp/assets/12145021/2f4e9bc1-cc79-412e-853c-61ad83fb8072">
